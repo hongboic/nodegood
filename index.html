@@ -29,6 +29,61 @@
             line-height: 1.6;
         }
 
+        /* 新增的保护地球标语样式 */
+        .earth-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .earth-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1444080748399-f23636f6b8a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .earth-banner .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .earth-banner h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .earth-banner p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 其余原有样式保持不变 */
         header {
             background: linear-gradient(to right, var(--primary), var(--secondary));
             color: var(--white);
@@ -438,6 +493,14 @@
             .stats {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .earth-banner h2 {
+                font-size: 2.5rem;
+            }
+            
+            .earth-banner p {
+                font-size: 1.3rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -486,6 +549,14 @@
             .stats {
                 grid-template-columns: 1fr;
             }
+            
+            .earth-banner h2 {
+                font-size: 2rem;
+            }
+            
+            .earth-banner p {
+                font-size: 1.1rem;
+            }
         }
 
         /* Animation for stats counter */
@@ -523,6 +594,14 @@
             <h1>Protect Our Planet, Preserve Our Future</h1>
             <p>Join the global movement to create a sustainable world through conservation, education, and community action.</p>
             <a href="#get-involved" class="btn">Join Our Network</a>
+        </div>
+    </section>
+
+    <!-- 新增的保护地球标语 -->
+    <section class="earth-banner">
+        <div class="container">
+            <h2>Protect Our Earth</h2>
+            <p>Every small action counts. Together we can make a difference for our planet's future.</p>
         </div>
     </section>
 
@@ -718,5 +797,4 @@
         });
     </script>
 </body>
-
 </html>
